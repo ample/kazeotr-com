@@ -2,9 +2,6 @@
 title: Happy Hour
 ---
 
-<% hh_menu = data.kaze.menus.detect{|m| m.respond_to?(:happy_hour) }.try(:href) %>
-
-
 				<div id="wsite-content" class="wsite-elements wsite-not-footer">
 	<div><div class="wsite-multicol"><div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
 	<table class="wsite-multicol-table">
@@ -16,7 +13,7 @@ title: Happy Hour
 
 <h2 class="wsite-content-title" style="text-align:center;">Happy hour &nbsp;daily</h2>
 
-<div class="paragraph" style="text-align:left;"><font size="4">Ditch the desk and head on over, and don't forget to invite your friends.<br /><br /><strong>Highlights</strong>:<br />&nbsp; &nbsp;&bull; Specialty cocktails are $5<br />&nbsp; &nbsp;&bull; Discounted select sushi rolls<br />&nbsp; &nbsp;&bull; Ramen is only $4.5<br /><br />Where else can you get a deal like that? Exactly.&nbsp;</font><br /><br /><font size="4"><span>**Please note that the Happy Hour specials are ONLY offered in the bar (inside, outside, and sushi bar -- not the dining room, however)</span></font><br /><br /><% unless hh_menu.nil? %><font size="4"><em>Download the menu <%= link_to 'HERE', hh_menu %></em></font><% end %></div>
+<div class="paragraph" style="text-align:left;"><font size="4">Ditch the desk and head on over, and don't forget to invite your friends.<br /><br /><strong>Highlights</strong>:<br />&nbsp; &nbsp;&bull; Specialty cocktails are $5<br />&nbsp; &nbsp;&bull; Discounted select sushi rolls<br />&nbsp; &nbsp;&bull; Ramen is only $4.5<br /><br />Where else can you get a deal like that? Exactly.&nbsp;</font><br /><br /><font size="4"><span>**Please note that the Happy Hour specials are ONLY offered in the bar (inside, outside, and sushi bar -- not the dining room, however)</span></font><br /><br /><% unless happy_hour_menu.nil? %><font size="4"><em>Download the menu <%= link_to 'HERE', happy_hour_menu %></em></font><% end %></div>
 
 
 
@@ -28,7 +25,7 @@ title: Happy Hour
 
 <div class="wsite-scribd">
 
-		<%= partial 'pdf', locals: { file: hh_menu, height: '650px' } %>
+		<%= partial 'pdf', locals: { file: happy_hour_menu, height: '650px' } unless happy_hour_menu.nil? %>
 
 
 			</div>
