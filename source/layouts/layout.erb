@@ -80,7 +80,7 @@
 
 </span></td>
 							<td id="nav"><ul class="wsite-menu-default">
-		<% data.navigation.header.each_with_index do |link, i| %>
+		<% data.kaze.header.each_with_index do |link, i| %>
 		<li <%= ' id="active"'.html_safe if "/#{current_page.path}" == link.href %>class="wsite-menu-item-wrap">
 			<%= link_to link.title, link.href %>
 		</li>
