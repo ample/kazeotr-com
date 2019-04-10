@@ -3,9 +3,7 @@ title: Menus
 ---
 <div id="wsite-content" class="wsite-elements wsite-not-footer">
     <div class="wsite-scribd">
-			<object data="<%= data.kaze.menus.first.href %>" type="application/pdf" width="100%" height="800px">
-				<p>It appears you don't have a PDF plugin for this browser. <%= link_to 'Click here to download the PDF file', data.kaze.menus.first.href %></p>
-			</object>
+      <%= partial 'pdf', locals: { file: data.kaze.menus.first.href } %>
     </div>
     <div class="paragraph" style="text-align:left;"><strong><font size="3">Download Our Menus</font></strong>
         <br />
