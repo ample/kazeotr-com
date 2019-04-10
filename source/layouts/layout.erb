@@ -80,60 +80,12 @@
 
 </span></td>
 							<td id="nav"><ul class="wsite-menu-default">
-		<li id="active" class="wsite-menu-item-wrap">
-			<a
-						href="index.html"
-				class="wsite-menu-item"
-				>
-				Kaze
-			</a>
-
+		<% data.navigation.header.each_with_index do |link, i| %>
+		<li <%= ' id="active"'.html_safe if "/#{current_page.path}" == link.href %>class="wsite-menu-item-wrap">
+			<%= link_to link.title, link.href %>
 		</li>
-		<li id="pg963748546317143006" class="wsite-menu-item-wrap">
-			<a
-						href="about.html"
-				class="wsite-menu-item"
-				>
-				About
-			</a>
+		<% end %>
 
-		</li>
-		<li id="pg987169358289395891" class="wsite-menu-item-wrap">
-			<a
-						href="menus.html"
-				class="wsite-menu-item"
-				>
-				Menus
-			</a>
-
-		</li>
-		<li id="pg519261951161688028" class="wsite-menu-item-wrap">
-			<a
-						href="reservations.html"
-				class="wsite-menu-item"
-				>
-				Reservations
-			</a>
-
-		</li>
-		<li id="pg621224313617927785" class="wsite-menu-item-wrap">
-			<a
-						href="happy-hour.html"
-				class="wsite-menu-item"
-				>
-				Happy Hour
-			</a>
-
-		</li>
-		<li id="pg215314388375413111" class="wsite-menu-item-wrap">
-			<a
-						href="events.html"
-				class="wsite-menu-item"
-				>
-				Events
-			</a>
-
-		</li>
 </ul>
 </td>
 						</tr>
