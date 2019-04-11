@@ -1,0 +1,248 @@
+---
+layout: false
+---
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.9.4/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//cdn.muicss.com/mui-0.9.4/js/mui.min.js"></script>
+    <script src="//videobase.sinclairstoryline.com/jwplayer7/jwplayer.js"></script>
+</head>
+
+<body>
+    <div id="player">
+    </div>
+
+    <script type="text/javascript">
+        var el = 'player',
+            verify = {
+                'externalId':function(value){
+                    console.log(value?true:false)
+                },
+                'zone':function(value){
+                    console.log(value?true:false)
+                },
+                'client':function(value){
+                    console.log(value?true:false)
+                },
+                'adKeywords':function(value){
+                    console.log(value?true:false)
+                },
+                'adStorySlug':function(value){
+                    console.log(value?true:false)
+                },
+                'thumbUrl':function(value){
+                    console.log(value?true:false)
+                }
+            };
+        var addScript = function() {
+            var parentHead = window.parent.document.getElementsByTagName('head')[0];
+            var loadedScript = window.parent.document.getElementById('frameResizeScript');
+            var script = document.createElement('script');
+            script.id = "frameResizeScript";
+            script.type = 'text/javascript';
+            script.src = 'scripts/resizeFrame.js';
+            //script.src = 'http://sinclairstoryline.com/resources/assets/common/scripts/jwplayer/embed/resizeFrame.js';
+            if (!loadedScript) {
+                parentHead.appendChild(script);
+            }
+        }
+
+        var warn = function(message) {
+            console.log(message);
+        }
+
+
+        var VerifiedQueryString = function(query_string) {
+
+            var values = ['externalId', 'zone', 'client', 'adKeywords', 'adStorySlug','thumbUrl'];
+
+            for (var i = 0; i < values.length; i++) {
+                if (query_string.hasOwnProperty(values[i]) && query_string[values[i]]) {
+
+
+                } else {
+                    query_string[values[i]] = verify[values[i]](query_string[values[i]]);
+                    warn(values[i] + ' missing');
+                }
+            }
+            return query_string;
+        };
+
+        var QueryString = function() {
+            var query_string = {};
+            var query = window.location.search.substring(1);
+            var vars = query.split("&");
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+                if (typeof query_string[pair[0]] === "undefined") {
+                    query_string[pair[0]] = decodeURIComponent(pair[1]);
+                } else if (typeof query_string[pair[0]] === "string") {
+                    var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+                    query_string[pair[0]] = arr;
+                } else {
+                    query_string[pair[0]].push(decodeURIComponent(pair[1]));
+                }
+            }
+            return VerifiedQueryString(query_string);
+            //return query_string
+        }();
+
+        function adProviders(opts) {
+            var providers = {
+                dfp: {
+                    url: 'http://pubads.g.doubleclick.net/gampad/ads?',
+                    breaks: {
+                        preroll: [{
+                            name: 'sz',
+                            value: '640x480'
+                        }, {
+                            name: 'iu',
+                            value: opts.zone
+                        }, {
+                            name: 'ciu_szs',
+                            value: '300x250'
+                        }, {
+                            name: 'impl',
+                            value: 's'
+                        }, {
+                            name: 'gdfp_req',
+                            value: 1
+                        }, {
+                            name: 'env',
+                            value: 'vp'
+                        }, {
+                            name: 'output',
+                            value: 'xml_vast3'
+                        }, {
+                            name: 'vpos',
+                            value: 'preroll'
+                        }, {
+                            name: 'unviewed_position_start',
+                            value: 1
+                        }, {
+                            name: 'url',
+                            value: '__page-url__'
+                        }, {
+                            name: 'correlator',
+                            value: '__timestamp__'
+                        }, {
+                            name: 'cust_params',
+                            value: 'kw=' + opts.adKeywords + '&' + 'slug=' + opts.adStorySlug
+                        }],
+                        postroll: [{
+                            name: 'sz',
+                            value: '640x480'
+                        }, {
+                            name: 'iu',
+                            value: opts.zone
+                        }, {
+                            name: 'ciu_szs',
+                            value: '300x250'
+                        }, {
+                            name: 'impl',
+                            value: 's'
+                        }, {
+                            name: 'gdfp_req',
+                            value: 1
+                        }, {
+                            name: 'env',
+                            value: 'vp'
+                        }, {
+                            name: 'output',
+                            value: 'xml_vast3'
+                        }, {
+                            name: 'vpos',
+                            value: 'postroll'
+                        }, {
+                            name: 'unviewed_position_start',
+                            value: 1
+                        }, {
+                            name: 'url',
+                            value: '__page-url__'
+                        }, {
+                            name: 'correlator',
+                            value: '__timestamp__'
+                        }, {
+                            name: 'cust_params',
+                            value: 'kw=' + opts.adKeywords + '&' + 'slug=' + opts.adStorySlug
+                        }]
+
+                    }
+                }
+            };
+            //console.log(opts)
+
+            return providers[opts.provider];
+        }
+
+        function getAdvertising() {
+            var opts = {
+                provider: "dfp",
+                zone: QueryString.zone,
+                client: QueryString.client,
+                adKeywords: QueryString.adKeywords,
+                adStorySlug: QueryString.adStorySlug,
+                preroll: true,
+                postroll: true
+            }
+            var isActive = false,
+                adProvider = adProviders(opts),
+                advertising = {
+                    client: opts.client,
+                    vpaidmode: 'enabled',
+                    schedule: {}
+                };
+            if (opts.zone) {
+                if (opts.preroll) {
+                    advertising.schedule.adbreak1 = {
+                        offset: 'pre',
+                        tag: adProvider.url + decodeURIComponent($.param(adProvider.breaks.preroll, true))
+
+                    };
+                    isActive = true;
+                }
+                if (opts.postroll) {
+                    advertising.schedule.adbreak2 = {
+                        offset: 'post',
+                        tag: adProvider.url + decodeURIComponent($.param(adProvider.breaks.postroll, true))
+                    };
+                    isActive = true;
+                }
+                if (isActive) {
+                    //console.log(advertising)
+                    return advertising;
+                } else {
+                    return null;
+                }
+            }
+        }
+
+        //console.log('QueryString', QueryString)
+        jwplayer.key = 'tnXS1eijyN7RYS3NrG1GsIwVZ92Gwd2Gu6Q80A==';
+        if (QueryString) {
+            jwplayer(el).setup({
+                "file": QueryString.externalId.file || 'https://content.uplynk.com/' + QueryString.externalId + '.m3u8',
+                "width": '100%',
+                "aspectratio": '16:9',
+                "autostart": false,
+                "advertising": getAdvertising(),
+                "primary": "html5",
+                "androidhls": true,
+                "image":decodeURIComponent(QueryString.thumbUrl)
+            });
+        }
+        //addScript();
+        // $('body').resize(function(){
+        //     $('#'+el).height(($('#'+el).width()/16)*9);
+        // });
+    </script>
+    <!-- usage
+    <iframe class="sd-embeded-player-iframe" src="embed.html?adKeywords=&adStorySlug=&preroll=true&postroll=true&externalId=cd59fa47cbc34508a8166d2fb60a0624&zone=/4756/KBOI/Web/home&client=googima" width="100%" height="600" frameborder=no marginHeight=0 margin-width=0></iframe>
+    -->
+</body>
+</html>
