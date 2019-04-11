@@ -18,9 +18,8 @@ title: Kaze Restaurant
 </div>
 
 <div style="text-align:center;"><div style="height: 10px; overflow: hidden;"></div>
-<a class="wsite-button wsite-button-small wsite-button-highlight" href="http://www.opentable.com/kaze-reservations-cincinnati?restref=98476" target="_blank">
-<span class="wsite-button-inner">Make a Reservation</span>
-</a>
+<%= link_to '<span class="wsite-button-inner">Make a Reservation</span>'.html_safe, data.kaze.opentable_url, target: '_blank', class: 'wsite-button wsite-button-small wsite-button-highlight' %>
+
 <div style="height: 10px; overflow: hidden;"></div></div>
 </div>
 

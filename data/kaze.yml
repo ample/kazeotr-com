@@ -6,11 +6,11 @@ header:
   - title: Menus
     href: /menus.html
   - title: Reservations
-    href: /reservations/index.html
+    href: /reservations.html
   - title: Happy Hour
     href: /happy-hour.html
   - title: Events
-    href: /events.html
+    href: /events/index.html
 menus:
   - title: Dinner
     href: uploads/1/3/6/0/13606600/kaze_dinner_menu_1.13.19.pdf
@@ -25,3 +25,5 @@ menus:
     happy_hour: true
   - title: Dessert
     href: uploads/1/3/6/0/13606600/dessert_6.20.18_single.pdf
+opentable_url: https://www.opentable.com/kaze-reservations-cincinnati?restref=98476
+private_events_url: /events/private.html
