@@ -82,7 +82,7 @@
 </span></td>
 							<td id="nav"><ul class="wsite-menu-default">
 		<% data.kaze.header.each_with_index do |link, i| %>
-		<li <%= ' id="active"'.html_safe if "/#{current_page.path}" == link.href || current_page.path.split('/').try(:first) == link.href.split('.').first[1..] %>class="wsite-menu-item-wrap">
+		<li id="<%= 'active' if "/#{current_page.path}" == link.href || current_page.path.split('/').try(:first) == link.href.split('.').first %>" class="wsite-menu-item-wrap">
 			<%= link_to link.title, link.href %>
 		</li>
 		<% end %>

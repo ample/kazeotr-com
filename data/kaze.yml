@@ -3,12 +3,12 @@ header:
     href: /index.html
   - title: About
     href: /about.html
-  - title: Menus
-    href: /menus.html
+  # - title: Menus
+  #   href: /menus.html
   - title: Reservations
     href: /reservations.html
-  - title: Happy Hour
-    href: /happy-hour.html
+  # - title: Happy Hour
+  #   href: /happy-hour.html
   - title: Events
     href: /events/index.html
 menus:

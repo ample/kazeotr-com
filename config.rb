@@ -12,6 +12,8 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+ignore '/menus.html.erb'
+
 configure :build do
   activate :minify_css
   activate :minify_javascript
