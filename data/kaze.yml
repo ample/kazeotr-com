@@ -7,8 +7,8 @@ header:
     href: /menus.html
   - title: Reservations
     href: /reservations.html
-  - title: Happy Hour
-    href: /happy-hour.html
+  # - title: Happy Hour
+  #   href: /happy-hour.html
   - title: Events
     href: /events/index.html
 menus:
