@@ -1,0 +1,106 @@
+.contact {
+  header {
+    @include bg-cover('contact-header-bg', bottom, center);
+  }
+
+  article {
+    @media (min-width: $screen-sm) {
+      margin-bottom: 30px;
+    }
+
+    .location {
+      padding-bottom: 40px;
+
+      h2 {
+        text-transform: uppercase;
+      }
+
+      p {
+        color: $link-color;
+      }
+    }
+
+    .tab-pane.start {
+      padding-bottom: 100px;
+    }
+  }
+
+  .wufoo input.text,
+  .wufoo textarea.textarea,
+  .wufoo input.file {
+    border: none;
+  }
+
+  .wufoo section a {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid transparent;
+    border-color: #ccc;
+    border-radius: 6px;
+    border-radius: 4px;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 18px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.33;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 10px 16px;
+    padding: 6px 12px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+}
+
+.embed {
+  background: transparent !important;
+  text-transform: uppercase;
+}
+
+form ul {
+  margin: 10px;
+}
+
+.embed form,
+.embed body {
+  background: transparent !important;
+  background-color: transparent !important;
+  font-family: 'acumin-pro-condensed', sans-serif;
+}
+
+.wufoo input.text,
+.wufoo textarea.textarea,
+.wufoo input.file {
+  background-color: $color-white;
+}
+
+form li.buttons input {
+  background-color: #9f1111;
+  border: none;
+  color: white;
+  font-size: 12px !important;
+  margin-right: 5px;
+  padding: 6px 7px;
+}
+
+.wufoo li div,
+.wufoo li span,
+.wufoo li div label,
+.wufoo li span label {
+  font-weight: 300;
+  text-transform: none;
+}
+
+.wufoo select.select {
+  background-color: white !important;
+}
+
+.wufoo input.btTxt {
+  font-family: Verdana;
+}

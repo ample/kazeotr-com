@@ -1,0 +1,12 @@
+<div class="btn-group pull-right">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+    Show <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><%= link_to 'All Press', "/press" %></li>
+    <% data.locations.each do |location| %>
+      <% city = location[0] %>
+      <li><%= link_to city.titleize, "#{city}.html" %></li>
+    <% end %>
+  </ul>
+</div>

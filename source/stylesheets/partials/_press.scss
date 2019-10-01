@@ -1,0 +1,84 @@
+.press {
+  header {
+    @include bg-cover('press-header-bg', center, center);
+  }
+
+  article {
+    @media (min-width: $screen-sm) {
+      margin-top: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+
+      &.borderless {
+        border: none;
+        color: $color-white;
+        padding-bottom: 0;
+      }
+    }
+
+    h2,
+    h3 {
+      small {
+        color: $brown-lighter;
+        display: block;
+
+        a {
+          color: $link-color-dark;
+
+          &:hover {
+            color: $link-color-hover;
+          }
+        }
+      }
+    }
+
+    p {
+      &.location,
+      &.source {
+        color: $brown-light;
+        font-size: 12px;
+        font-style: italic;
+        margin: 3px 0;
+      }
+    }
+
+    .blog-post {
+      border-bottom: $border;
+      padding: 15px 0;
+    }
+
+    .blog-post:first-of-type {
+      padding-top: 0;
+    }
+
+    .btn-primary {
+      background-color: transparent;
+      border-color: $brown-dark;
+      margin: 10px 0;
+    }
+
+    .page-nav {
+      margin-top: 20px;
+
+      a {
+        display: inline-block;
+        padding: 4px 0;
+      }
+
+      .disabled {
+        @include opacity(0.2);
+      }
+    }
+
+    .press-header {
+      border-bottom: $border;
+
+      .btn-group {
+        margin-top: 20px;
+      }
+    }
+  }
+}

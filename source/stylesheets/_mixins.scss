@@ -1,0 +1,43 @@
+
+@mixin bg-cover($image-path, $vert-pos, $horiz-pos) {
+  background: url('../images/#{$image-path}.jpg') no-repeat $vert-pos $horiz-pos;
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/#{$image-path}.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/#{$image-path}.jpg', sizingMethod='scale')";
+  height: auto;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// Retina bg images
+@mixin bg-image-retina($image-path, $type, $width, $height, $xpos, $ypos) {
+  background-image: image-url($image-path + '.' + $type);
+  background-size:  $width $height;
+  background-position: $xpos $ypos;
+  width: $width;
+  height: $height;
+
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (-moz-min-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx){
+    & {
+      background-image: image-url($image-path + '@2x.' + $type);
+      -webkit-background-size:        $width $height;
+      -moz-background-size:           $width $height;
+      -o-background-size:             $width $height;
+      background-size:                $width $height;
+
+      -webkit-background-position:    $xpos $ypos;
+      -moz-background-position:       $xpos $ypos;
+      -o-background-position:         $xpos $ypos;
+      background-position:            $xpos $ypos;
+    }
+  }
+}

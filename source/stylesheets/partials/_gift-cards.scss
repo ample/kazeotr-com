@@ -1,0 +1,21 @@
+.gift-cards {
+  article {
+    @media (min-width: $screen-sm) {
+      margin-bottom: 30px;
+    }
+  }
+
+  header {
+    @include bg-cover('gift-card-header-bg', top, center);
+  }
+
+  h2 {
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  .hgc-text {
+    font-size: 22px;
+  }
+}

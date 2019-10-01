@@ -1,0 +1,31 @@
+<div class="navbar-header">
+  <a class="navbar-brand" href="/"></a>
+  <button type="button" class="navbar-toggle-menu pull-right visible-xs">
+    <span class="sr-only">Toggle navigation</span>
+    <i class="fas fa-bars fa-2x"></i>
+  </button>
+</div>
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+<div class="collapse navbar-collapse" id="navbar">
+
+  <%= image_tag 'logo@2x.png', alt: 'Pepp & Delores Logo', class: 'img-responsive space-xs visible-xs' %>
+
+  <ul class="nav navbar-nav navbar-right">
+    <li class="visible-xs"><a href="/" class="<%= 'active' if current_page.path =~ /^index/ %>">Home</a></li>
+    <li><a href="/menu" class="<%= 'active' if current_page.path =~ /^menu/ %>">Menu</a></li>
+    <li><a href="/reservations" class="<%= 'active' if current_page.path =~ /^reservations/ %>">Reservations</a></li>
+    <li><a href="/private-events" class="<%= 'active' if current_page.path =~ /^private-events/ %>">Private Events</a>
+    </li>
+    <li class="visible-xs"><a href="/contact" class="<%= 'active' if current_page.path =~ /^contact/ %>">Contact</a>
+    </li>
+    <li class="last"><a href="/gift-cards" class="<%= 'active' if current_page.path =~ /^gift-cards/ %>">Gift Cards</a>
+    </li>
+    <li class="visible-xs">
+      <button type="button" class="navbar-toggle-menu btn-block">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fas fa-times fa-lg"></i>
+      </button>
+    </li>
+  </ul>
+</div><!-- /.navbar-collapse -->

@@ -1,0 +1,63 @@
+---
+title: Reservations.
+---
+
+<header>
+  <div class="container">
+    <h1>Reservations</h1>
+  </div>
+</header>
+
+<article>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Cincinnati</span></h2>
+        <p class="lead">Our restaurants have a limited number of tables available for reservations. Walk-ins are always
+          welcome.</p>
+
+        <div class="row">
+          <div class="col-sm-6 reservations">
+            <h3>Make a Reservation</h3>
+            <form class="space-sm" action="../" name="contactSelector">
+              <div class="form-group">
+                <% opentable_id = 999481%>
+                <script type="text/javascript"
+                  src="//www.opentable.com/widget/reservation/loader?rid=<%= opentable_id %>&domain=com&type=standard&theme=standard&lang=en-US&overlay=false&iframe=true">
+                </script>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-sm-6">
+            <h3>Restaurant Takeover</h3>
+            <p>We're happy to host your next event but first we'll need to gather a few details about your party before
+              securing the reservation. We ask that you contact us at least 24 hours before the desired time of the
+              event.</p>
+            <p>Rent the entire space for up to 90 guests or book a smaller event with seating for 25.</p>
+            <a href="/private-events/plan-a-party.html" class="btn btn-primary">Plan a Party</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="details location">
+          <h3>Details</h3>
+          <address>
+            <a href="https://www.google.com/maps/place/143+Walnut+St,+Cincinnati,+OH+45215,+USA/@39.09819,-84.5127443,17z/data=!3m1!4b1!4m5!3m4!1s0x8841b15ab4fdd741:0x556dd1ae0cb95982!8m2!3d39.09819!4d-84.5105503"
+              target="_blank">
+              143 Walnut St.<br>
+              Cincinnati, OH 45202
+            </a>
+          </address>
+          <a href="tel:513-867-5309">(513) 867-5309</a>
+
+          <ul class="list-unstyled">
+            <li>MON - SUN</li>
+            <li>11:00 AM - 12:00 AM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+</article>

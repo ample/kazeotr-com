@@ -1,0 +1,207 @@
+.index {
+  #main {
+    background-position: 0 790px;
+  }
+
+  section {
+    &.gallery {
+      @media (min-width: $screen-sm) {
+        padding-top: 40px;
+      }
+
+      img {
+        margin-bottom: 20px;
+      }
+
+      .col-sm-3 {
+        .img-responsive {
+          margin: 0 auto 20px;
+
+          img {
+            @media (min-width: $screen-sm) {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &.intro {
+      background-color: $color-orange-light;
+      border-bottom: 2px solid $color-red-orange-dark;
+      border-top: 2px solid $color-red-orange-dark;
+      color: $color-red-orange-dark;
+      padding: 52px 20px;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+
+      p {
+        font-size: 17px;
+        font-weight: 600;
+        line-height: 1.7;
+        margin: 0;
+      }
+    }
+
+    &.locations-press {
+      h2 {
+        margin-bottom: 0 0 16px;
+      }
+
+      .locations {
+        border-top: $border;
+        padding: 32px 0 0;
+      }
+
+      .location {
+        a {
+          display: inline-block;
+          margin-bottom: 10px;
+        }
+
+        span {
+          display: block;
+          font-size: 20px;
+          font-weight: 600;
+          letter-spacing: 2px;
+          margin-bottom: 8px;
+          text-transform: uppercase;
+        }
+      }
+
+      .social {
+        display: flex;
+        flex-flow: wrap;
+        font-size: 10px;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 180px;
+        text-transform: uppercase;
+
+        @media (min-width: $screen-sm) {
+          margin: 0;
+        }
+
+        a {
+          color: $color-black;
+          display: flex;
+          margin-top: 10px;
+          width: 40%;
+
+          &:focus,
+          &:hover {
+            color: $link-color-hover;
+          }
+        }
+
+        svg {
+          height: 13px;
+          margin-right: 6px;
+          width: 12px;
+        }
+
+        .doordash,
+        .uber-eats {
+          svg {
+            height: 15px;
+          }
+        }
+
+        .doordash {
+          svg {
+            width: 25px;
+          }
+        }
+
+        .uber-eats {
+          svg {
+            width: 72px;
+          }
+        }
+      }
+
+      .press {
+        border-top: $border;
+        padding: 15px 0 0;
+
+        @media (max-width: $screen-sm) {
+          margin-top: 20px;
+        }
+
+        h3 {
+          font-size: 18px;
+        }
+      }
+
+      .title {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .carousel {
+    h1 {
+      bottom: 0;
+      margin: 0;
+      position: relative;
+      text-align: left;
+      text-shadow: none;
+      text-transform: uppercase;
+      top: 50%;
+      transform: translateY(-25%);
+    }
+
+    .carousel-inner {
+      .item,
+      .wrapper {
+        height: 400px;
+
+        @media (min-width: $screen-md) {
+          height: 576px;
+        }
+      }
+
+      .wrapper {
+        display: flex;
+        position: relative;
+
+        img {
+          left: 0;
+          max-height: 140%;
+          min-height: 100%;
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          width: 100vw;
+
+          @media (min-width: $screen-md) {
+          }
+        }
+      }
+    }
+
+    .carousel-caption {
+      bottom: 0;
+      top: 0;
+
+      @media (min-width: $screen-sm) {
+        left: 15%;
+      }
+    }
+  }
+
+  .carousel-control {
+    width: 10%;
+
+    svg {
+      fill: $color-white;
+      height: 30px;
+      left: 35%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(25%);
+      width: 18px;
+    }
+  }
+}
