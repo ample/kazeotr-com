@@ -27,18 +27,24 @@
     }
 
     &.intro {
-      background-color: $color-orange-light;
-      border-bottom: 2px solid $color-red-orange-dark;
-      border-top: 2px solid $color-red-orange-dark;
-      color: $color-red-orange-dark;
+      background: image-url('fish-n-oct-sm@2x.png') no-repeat;
+      background-position: center top;
+      background-size: cover;
+      border-bottom: 3px solid $color-white;
+      border-top: 3px solid $color-white;
+      color: $color-black;
       padding: 52px 20px;
       position: relative;
       text-align: center;
-      text-transform: uppercase;
+      width: 100%;
+
+      @media (min-width: $screen-sm) {
+        background-image: image-url('fish-n-oct@2x.png');
+      }
 
       p {
         font-size: 17px;
-        font-weight: 600;
+        font-weight: 300;
         line-height: 1.7;
         margin: 0;
       }
@@ -73,10 +79,13 @@
       .social {
         display: flex;
         flex-flow: wrap;
+        font-family: $font-headings;
         font-size: 10px;
+        font-weight: 600;
         justify-content: space-between;
+        letter-spacing: 1px;
         margin: 0 auto;
-        max-width: 180px;
+        max-width: 200px;
         text-transform: uppercase;
 
         @media (min-width: $screen-sm) {
@@ -84,7 +93,7 @@
         }
 
         a {
-          color: $color-black;
+          color: $color-white;
           display: flex;
           margin-top: 10px;
           width: 40%;
@@ -92,10 +101,15 @@
           &:focus,
           &:hover {
             color: $link-color-hover;
+
+            svg {
+              fill: $color-salmon;
+            }
           }
         }
 
         svg {
+          fill: $color-white;
           height: 13px;
           margin-right: 6px;
           width: 12px;
@@ -158,7 +172,7 @@
         height: 400px;
 
         @media (min-width: $screen-md) {
-          height: 576px;
+          height: 500px;
         }
       }
 

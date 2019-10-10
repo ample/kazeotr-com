@@ -4,9 +4,11 @@
       <li><a href="/" class="<%= 'active' if current_page.path =~ /^index/ %> caps">Home</a></li>
       <li><a href="/contact" class="<%= 'active' if current_page.path =~ /^contact/ %> caps">Contact</a></li>
     </ul>
-    <p class="legal"><%= link_to 'Privacy Policy', '/privacy-policy' %> &nbsp;
-      <%= link_to 'Refund Policy', '/refund-policy' %></p>
-    <p class="copyright">&copy; <span data-role="current-year"><%= Time.now.year %></span> Pepp &amp; Delores</p>
+    <ul class="list-inline copyright">
+      <li><span>&copy; <span data-role="current-year"><%= Time.now.year %></span> Kaze</span>
+      <li><%= link_to 'Privacy Policy', '/privacy-policy' %></li>
+      <li><%= link_to 'Refund Policy', '/refund-policy' %></li>
+    </ul>
     <p class="legal"> Site design by <%= link_to 'Ample', 'http://helloample.com', target: 'blank', class: "text-red" %>
     </p>
   </div>

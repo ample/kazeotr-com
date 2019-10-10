@@ -61,7 +61,7 @@ section {
 
 body {
   background-color: $color-white;
-  color: $color-black;
+  color: $color-white;
   font-family: $font-base;
   -webkit-font-smoothing: antialiased;
 }
@@ -72,13 +72,13 @@ p {
   }
 
   &.lead {
-    color: $color-red-orange-dark;
+    color: $color-black;
     font-size: 17px;
+    font-weight: 500;
     line-height: 30px;
     margin: 0 auto 60px;
     max-width: 1100px;
     text-align: center;
-    text-transform: uppercase;
   }
 }
 
@@ -108,13 +108,13 @@ h1 {
   }
 
   @media (min-width: $screen-md) {
-    font-size: 48px;
-    line-height: 58px;
+    font-size: 70px;
+    line-height: 72px;
   }
 
   @media (min-width: $screen-lg) {
-    font-size: 70px;
-    line-height: 88px;
+    font-size: 90px;
+    line-height: 92px;
   }
 
   .no-header & {
@@ -129,8 +129,10 @@ h1 {
 }
 
 h2 {
-  color: $color-red;
+  color: $color-white;
   font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 2px;
   margin-top: 0;
 }
 
@@ -168,14 +170,14 @@ p.white {
 
 .btn {
   &.btn-default {
-    color: $color-red;
+    color: $color-white;
   }
 
   &.btn-primary {
     background-color: transparent;
-    border-color: $color-red;
+    border-color: $color-white;
     border-radius: 0;
-    color: $color-red;
+    color: $color-white;
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 2px;
@@ -183,7 +185,8 @@ p.white {
     text-transform: uppercase;
 
     &:hover {
-      background-color: $color-red;
+      background-color: $color-salmon;
+      border-color: $color-salmon;
       color: $color-white;
     }
 
@@ -201,34 +204,17 @@ html,
 .jPanelMenu-panel {
   background: image-url('main-bg.jpg') bottom repeat !important;
   background-color: white !important;
-}
 
-.ornament {
-  $height: 26px;
-
-  background: image-url('ornament-1.png') no-repeat top center;
-  background-size: contain;
-  height: $height;
-  left: 50%;
-  position: absolute;
-  transform: translateX(-50%);
-  width: 84px;
-
-  &.top {
-    top: -($height / 2) - 1px;
-  }
-
-  &.bottom {
-    bottom: -($height / 2) - 1px;
-  }
-
-  &.separator {
-    background-image: image-url('ornament-2.png');
-    border: 0;
-    margin: 0 auto 60px;
-    position: static;
-    transform: none;
-    width: 106px;
+  &:after {
+    background-image: linear-gradient(to bottom right, #000000, #000000);
+    content: ' ';
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
   }
 }
 

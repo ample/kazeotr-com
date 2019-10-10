@@ -34,10 +34,10 @@ nav {
     .navbar-brand {
       display: block;
 
-      @include bg-image-retina('logo', png, 81px, 54px, 0, 0);
+      @include bg-image-retina('logo', png, 54px, 54px, 0, 0);
 
       @media (min-width: $screen-sm) {
-        @include bg-image-retina('logo', png, 127px, 87px, 0, 0);
+        @include bg-image-retina('logo', png, 87px, 87px, 0, 0);
       }
     }
 
@@ -78,7 +78,7 @@ nav {
         a {
           color: $color-white;
           font-family: $font-nav;
-          font-size: 11px;
+          font-size: 13px;
           font-weight: 700;
           letter-spacing: 0.15em;
           padding: 44px 22px;
