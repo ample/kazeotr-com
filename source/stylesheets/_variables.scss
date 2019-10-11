@@ -1,15 +1,16 @@
 // Typography
-$font-base: 'Montserrat', sans-serif;
-$font-headings: 'Krona One', sans-serif;
+$font-base: 'Reem Kufi', sans-serif;
+$font-headings: 'Orbitron', sans-serif;
 $font-nav: $font-headings;
 
-// Pepp & Dolores Colors
+// Kaze Colors
 $color-white: #fff;
-$color-orange-light: #ddc9a2;
+$color-orange-light: #ee9c90;
 $color-red-orange-dark: #5c3327;
 $color-black: #000;
 $color-red: #9f1111;
 $color-gold: #ddc9a2;
+$color-salmon: #d96858;
 
 // Colors
 $white-dirty: #e8e7e6;
@@ -22,8 +23,8 @@ $orange: #d5875f;
 $red-lighter: #d95745;
 
 // Links
-$link-color: $color-red;
-$nav-color-active: $color-gold;
+$link-color: $color-salmon;
+$nav-color-active: $color-salmon;
 $link-color-dark: #71452f;
 $link-color-hover: $color-orange-light;
 
@@ -31,4 +32,4 @@ $link-color-hover: $color-orange-light;
 $primaryButtonBackground: $link-color;
 
 // Border
-$border: 2px solid $color-gold;
+$border: 2px solid $color-white;
