@@ -1,6 +1,6 @@
 .reservations {
   header {
-    @include bg-cover('reservations-header-bg', bottom, right);
+    @include bg-cover('reservations-header-bg', top, right);
   }
 
   h3 {
@@ -18,16 +18,12 @@
   .details {
     margin-top: 60px;
 
-    @media (min-width: $screen-sm) {
-      margin-top: 25px;
-    }
-
-    address {
-      text-transform: uppercase;
-    }
-
     .list-unstyled {
       margin-top: 20px;
+    }
+
+    @media (min-width: $screen-sm) {
+      margin-top: 25px;
     }
   }
 }
