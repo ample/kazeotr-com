@@ -50,6 +50,10 @@ article {
 section {
   padding: 20px 0;
 
+  &.menu-group {
+    padding: 35px;
+  }
+
   &.no-header {
     border-top: 3px solid $color-red;
     padding-bottom: 60px;
@@ -131,7 +135,7 @@ h1 {
   }
 
   .no-header & {
-    color: $color-red;
+    color: $color-white;
     margin: 0;
 
     @media (min-width: $screen-lg) {
@@ -238,7 +242,7 @@ html,
   font-size: 18px;
 }
 
-$space: 50px;
+$space: 60px;
 
 .space-lg {
   margin-top: $space;
