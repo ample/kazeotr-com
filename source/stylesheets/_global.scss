@@ -50,6 +50,10 @@ article {
 section {
   padding: 20px 0;
 
+  &.menu-group {
+    padding: 35px;
+  }
+
   &.no-header {
     border-top: 3px solid $color-red;
     padding-bottom: 60px;

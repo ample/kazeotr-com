@@ -6,7 +6,7 @@
 
 .menu {
   header {
-    @include bg-cover('menu-header-bg', center, center);
+    @include bg-cover('menu-header-bg', top, center);
   }
 }
 
@@ -31,11 +31,23 @@
       }
 
       h2 {
-        padding-bottom: 30px;
+        color: $color-salmon;
+        font-family: $font-headings;
+        padding-bottom: 20px;
       }
 
       .list-unstyled {
+        font-family: $font-base;
         margin-bottom: 0;
+        text-transform: lowercase;
+
+        em {
+          text-transform: uppercase;
+        }
+
+        li {
+          text-transform: lowercase;
+        }
 
         @media (min-width: $screen-sm) {
           display: flex;
