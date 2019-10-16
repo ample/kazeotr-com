@@ -76,12 +76,16 @@ form ul {
 }
 
 form li.buttons input {
-  background-color: #9f1111;
+  background-color: #d96858;
   border: none;
   color: white;
+  font-family: $font-headings;
   font-size: 12px !important;
-  margin-right: 5px;
-  padding: 6px 7px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 15px 0;
+  padding-top: 10px;
+  text-transform: uppercase;
 }
 
 .wufoo li div,
