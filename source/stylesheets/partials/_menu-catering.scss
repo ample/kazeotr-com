@@ -21,7 +21,7 @@
       margin: 0 auto;
 
       @media (min-width: $screen-md) {
-        max-width: 800px;
+        max-width: 860px;
       }
     }
 
@@ -30,10 +30,21 @@
         padding-top: 0;
       }
 
-      h2 {
-        color: $color-salmon;
-        font-family: $font-headings;
-        padding-bottom: 20px;
+      .menu-header {
+        padding-bottom: 30px;
+
+        h2 {
+          color: $color-salmon;
+          font-family: $font-headings;
+          margin-bottom: 3px;
+        }
+
+        p {
+          color: $color-salmon;
+          font-family: $font-base;
+          font-size: 18px;
+          letter-spacing: 1px;
+        }
       }
 
       .list-unstyled {
@@ -52,11 +63,12 @@
         @media (min-width: $screen-sm) {
           display: flex;
           flex-flow: wrap;
+          justify-content: center;
         }
       }
 
       li {
-        font-size: 15px;
+        font-size: 18px;
         letter-spacing: 1px;
         line-height: 24px;
         margin-bottom: 40px;
@@ -73,6 +85,7 @@
         }
 
         @media (min-width: $screen-sm) {
+          padding: 0 10px;
           width: 50%;
         }
 
