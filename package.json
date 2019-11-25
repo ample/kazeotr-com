@@ -31,15 +31,28 @@
     ]
   },
   "stylelint": {
-    "extends": ["./node_modules/prettier-stylelint/config.js"],
-    "plugins": ["stylelint-order", "stylelint-scss"],
+    "extends": [
+      "./node_modules/prettier-stylelint/config.js"
+    ],
+    "plugins": [
+      "stylelint-order",
+      "stylelint-scss"
+    ],
     "rules": {
       "at-rule-empty-line-before": [
         "always",
         {
-          "except": ["blockless-after-same-name-blockless", "first-nested"],
-          "ignore": ["after-comment"],
-          "ignoreAtRules": ["else", "custom-selector"]
+          "except": [
+            "blockless-after-same-name-blockless",
+            "first-nested"
+          ],
+          "ignore": [
+            "after-comment"
+          ],
+          "ignoreAtRules": [
+            "else",
+            "custom-selector"
+          ]
         }
       ],
       "at-rule-name-case": "lower",
@@ -49,7 +62,10 @@
       "block-closing-brace-newline-after": [
         "always",
         {
-          "ignoreAtRules": ["if", "else"]
+          "ignoreAtRules": [
+            "if",
+            "else"
+          ]
         }
       ],
       "block-closing-brace-empty-line-before": "never",
@@ -61,8 +77,13 @@
       "comment-empty-line-before": [
         "always",
         {
-          "except": ["first-nested"],
-          "ignore": ["after-comment", "stylelint-commands"]
+          "except": [
+            "first-nested"
+          ],
+          "ignore": [
+            "after-comment",
+            "stylelint-commands"
+          ]
         }
       ],
       "comment-no-empty": true,
@@ -70,8 +91,14 @@
       "custom-property-empty-line-before": [
         "always",
         {
-          "except": ["after-custom-property", "first-nested"],
-          "ignore": ["after-comment", "inside-single-line-block"]
+          "except": [
+            "after-custom-property",
+            "first-nested"
+          ],
+          "ignore": [
+            "after-comment",
+            "inside-single-line-block"
+          ]
         }
       ],
       "declaration-bang-space-after": "never",
@@ -82,8 +109,14 @@
       "declaration-empty-line-before": [
         "always",
         {
-          "except": ["after-declaration", "first-nested"],
-          "ignore": ["after-comment", "inside-single-line-block"]
+          "except": [
+            "after-declaration",
+            "first-nested"
+          ],
+          "ignore": [
+            "after-comment",
+            "inside-single-line-block"
+          ]
         }
       ],
       "font-family-no-duplicate-names": true,
@@ -122,12 +155,17 @@
       "media-query-list-comma-space-before": "never",
       "number-leading-zero": "always",
       "number-no-trailing-zeros": true,
-      "order/order": ["custom-properties", "declarations"],
+      "order/order": [
+        "custom-properties",
+        "declarations"
+      ],
       "order/properties-alphabetical-order": true,
       "rule-empty-line-before": [
         "always",
         {
-          "except": ["first-nested"]
+          "except": [
+            "first-nested"
+          ]
         }
       ],
       "scss/at-else-closing-brace-newline-after": "always-last-in-chain",
@@ -142,15 +180,27 @@
       "scss/dollar-variable-empty-line-before": [
         "always",
         {
-          "except": ["first-nested", "after-comment", "after-dollar-variable"],
-          "ignore": ["after-comment", "inside-single-line-block"]
+          "except": [
+            "first-nested",
+            "after-comment",
+            "after-dollar-variable"
+          ],
+          "ignore": [
+            "after-comment",
+            "inside-single-line-block"
+          ]
         }
       ],
       "scss/double-slash-comment-empty-line-before": [
         "always",
         {
-          "except": ["first-nested"],
-          "ignore": ["between-comments", "stylelint-commands"]
+          "except": [
+            "first-nested"
+          ],
+          "ignore": [
+            "between-comments",
+            "stylelint-commands"
+          ]
         }
       ],
       "selector-attribute-brackets-space-inside": "never",

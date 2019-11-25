@@ -1,0 +1,78 @@
+.x36-chambers {
+  header {
+    @include bg-cover('reservations-header-bg', top, right);
+  }
+
+  h3 {
+    margin-top: 0;
+  }
+
+  .intro {
+    background: image-url('fish-n-oct-sm@2x.png') no-repeat;
+    background-position: center top;
+    background-size: cover;
+    border-bottom: 3px solid $color-white;
+    border-top: 3px solid $color-white;
+    color: $color-black;
+    padding: 52px 20px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    @media (min-width: $screen-sm) {
+      background-image: image-url('fish-n-oct@2x.png');
+    }
+
+    p {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.7;
+      margin: 0;
+    }
+  }
+
+  article {
+    margin-top: 45px;
+  }
+
+  .image-grid {
+    img {
+      margin-bottom: 30px;
+    }
+  }
+
+  .happy-hour-box {
+    margin: 45px auto 0;
+    max-width: 350px;
+
+    h3 {
+      font-size: 17px;
+      line-height: 22px;
+      text-transform: unset;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 65px;
+    }
+  }
+
+  .stamp-box {
+    display: flex;
+    justify-content: flex-end;
+    margin: 50px 0 10px;
+
+    img {
+      max-width: 145px;
+
+      @media (min-width: $screen-sm) {
+        margin-bottom: -75px;
+      }
+
+      @media (min-width: $screen-md) {
+        max-width: 190px;
+      }
+    }
+  }
+}
